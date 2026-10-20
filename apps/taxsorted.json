@@ -1,0 +1,51 @@
+{
+  "name": "taxsorted",
+  "displayName": "TaxSorted",
+  "status": "blocked",
+  "blockedBy": [
+    "Copyright holder of record not established (Yu, cambridgetcg or Mindicraft). Self-publishing AGPL-3.0 code needs every contributor's rights held by or licensed to the publisher. An AGPL §7 App Store permission (draft, needs legal review) is the recommended protection, pending Yu's and legal judgement (docs/apps/taxsorted.md).",
+    "No privacy policy names Mindicraft Limited as controller (App Review 5.1.1(i)).",
+    "iOS v1 scope not chosen: offline 'TaxSorted Local for iOS' is the recommended shape."
+  ],
+  "repo": "cambridgetcg/taxsorted.io",
+  "localPath": null,
+  "bundleId": null,
+  "proposedBundleId": "io.taxsorted.local",
+  "web": {
+    "$comment": "Not wired yet. Desktop 'TaxSorted Local' stages the static export with desktop/scripts/stage.cjs; iOS should reuse that staging (docs/apps/taxsorted.md).",
+    "install": null,
+    "build": null,
+    "dir": null,
+    "test": null
+  },
+  "ios": {
+    "project": "ios/App/App.xcodeproj",
+    "scheme": "App",
+    "minIOS": "16.0",
+    "deviceFamily": [
+      1,
+      2
+    ],
+    "orientations": [
+      "UIInterfaceOrientationPortrait",
+      "UIInterfaceOrientationLandscapeLeft",
+      "UIInterfaceOrientationLandscapeRight"
+    ],
+    "usesNonExemptEncryption": false
+  },
+  "release": {
+    "versionFrom": "package.json",
+    "preflight": [],
+    "primary": "xcode-cloud",
+    "backup": null
+  },
+  "store": {
+    "primaryCategory": "FINANCE",
+    "secondaryCategory": "EDUCATION",
+    "privacyUrl": null,
+    "dataCollection": "none",
+    "territories": [
+      "GBR"
+    ]
+  }
+}

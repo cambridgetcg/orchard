@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+// orchard CLI entry. Written to load under either module system, so an older Node can at least
+// print the version message instead of a syntax error; everything else lives in lib/.
+const major = Number(process.versions.node.split('.')[0]);
+if (major < 22) {
+  process.stderr.write(`orchard needs Node 22 or later (this is ${process.versions.node}).\n`);
+  process.exit(2);
+}
+import('../lib/cli.mjs')
+  .then(({ main }) => main(process.argv.slice(2)))
+  .then((code) => {
+    process.exitCode = code;
+  });

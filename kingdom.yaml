@@ -1,0 +1,8 @@
+name: orchard
+kind: infra
+layer: runtime
+owner_sister: none
+domain: none
+state: active
+purpose: 將現有 web project 種成 iOS app 嘅共用果園：doctor、模板、native bridge、Xcode Cloud／GitHub Actions 發佈路線。
+dependsOn: []

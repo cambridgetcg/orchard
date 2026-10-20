@@ -1,0 +1,36 @@
+{
+  "name": "mythseal",
+  "displayName": "Mythseal",
+  "status": "first-flight",
+  "repo": "cambridgetcg/mythseal",
+  "localPath": "~/Games/mythseal-orchard",
+  "bundleId": "com.mythseal.game",
+  "web": {
+    "install": "npm ci",
+    "build": "npm run build:native",
+    "dir": "dist",
+    "test": "npm test"
+  },
+  "ios": {
+    "project": "ios/App/App.xcodeproj",
+    "scheme": "App",
+    "minIOS": "16.0",
+    "deviceFamily": [1],
+    "orientations": ["UIInterfaceOrientationPortrait"],
+    "usesNonExemptEncryption": false
+  },
+  "release": {
+    "versionFrom": "package.json",
+    "preflight": ["git merge-base --is-ancestor 7a7d03e HEAD"],
+    "primary": "xcode-cloud",
+    "backup": "github-actions:.github/workflows/mobile.yml"
+  },
+  "store": {
+    "primaryCategory": "GAMES",
+    "secondaryCategory": "GAMES_CARD",
+    "privacyUrl": "https://mythseal.com/privacy.html",
+    "dataCollection": "none",
+    "excludeTerritories": ["CHN", "VNM"],
+    "excludeReason": "Games need an NPPA approval number in mainland China and a game licence in Vietnam."
+  }
+}

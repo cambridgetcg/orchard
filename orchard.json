@@ -1,0 +1,24 @@
+{
+  "$comment": "Team-wide, non-secret settings. Secrets never live in this repo; see docs/KEYS.md.",
+  "team": {
+    "entity": "Mindicraft Limited",
+    "companyNumber": "13782045",
+    "accountType": "organization",
+    "teamId": "ZXUWDK4J3C",
+    "$comment": "Confirmed by Yu from developer.apple.com Membership details on 2026-10-20. A Team ID is public (it appears in every signed app); it is not a secret."
+  },
+  "appStoreConnect": {
+    "$comment": "Only the GitHub Actions backup route and API scripting need a key. Xcode Cloud signs without one. Key ID and issuer ID live in ~/.config/orchard/asc.json (0600), the .p8 in the login Keychain.",
+    "keychainService": "orchard.asc.p8",
+    "localConfig": "~/.config/orchard/asc.json"
+  },
+  "toolchain": {
+    "xcode": "27.1",
+    "xcodeBuild": "27A9275",
+    "xcodeFloorForUpload": "26.0",
+    "capacitor": "8.5.3",
+    "node": "24",
+    "minIOS": "16.0"
+  },
+  "verifiedOn": "2026-10-20"
+}

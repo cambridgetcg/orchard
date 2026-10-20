@@ -1,0 +1,9 @@
+node_modules/
+.DS_Store
+*.p8
+*.p12
+*.mobileprovision
+*.ipa
+*.xcarchive
+build/
+.orchard-local.json
