@@ -48,7 +48,7 @@ Status as of 2026-10-20.
 
 | App | Manifest | Status | Highest rung proved | Next |
 |---|---|---|---|---|
-| Mythseal | [apps/mythseal.json](apps/mythseal.json) | **first-flight**: branch `ios/first-flight` in the mythseal repo brings in PR #13 with a merge commit and fixes it. | `simulator`: `orchard sim mythseal` built, installed and launched it on an iPhone 17 Simulator (Xcode 27.1, iOS 27.0) at `0cb207f` (2026-10-20); `Package.resolved` committed | `signed-archive`: needs the first Xcode Cloud workflow ([RUNBOOK step 5](docs/RUNBOOK.md)) |
+| Mythseal | [apps/mythseal.json](apps/mythseal.json) | **first-flight**: branch `ios/first-flight` in the mythseal repo brings in PR #13 with a merge commit and fixes it. | `signed-archive`: Xcode Cloud build 3 (Xcode 27.1, `bc7252e`, 2026-10-20) ran the post-clone script (667/667 tests, store build, `cap sync`), resolved packages, archived, exported for App Store distribution with Apple's cloud signing and handed version 0.5.1 (3) to App Store Connect | `testflight-internal`: App Store Connect processing, then an internal tester installs it through TestFlight (that install is also the first `device` rung) |
 | TaxSorted | [apps/taxsorted.json](apps/taxsorted.json) | **blocked**: the copyright holder of record for the AGPL-3.0 code is not established, and an AGPL §7 App Store permission (a draft that needs legal review) is the recommended protection, pending Yu's and legal judgement; no privacy policy names Mindicraft Limited; the iOS v1 scope is not chosen. | none (no iOS project exists) | Yu's decisions in [docs/apps/taxsorted.md](docs/apps/taxsorted.md) |
 
 Per-app notes: [docs/apps/mythseal.md](docs/apps/mythseal.md), [docs/apps/taxsorted.md](docs/apps/taxsorted.md).

@@ -195,6 +195,13 @@ These facts go stale. Re-check anything load-bearing before a release, and add n
 - **inferred.** Xcode Cloud compute is independent of GitHub Actions billing.
 - **verified.** Xcode Cloud assigns each build a build number, incrementing from 1; an Admin or App Manager can set a custom next build number in App Store Connect, which Apple describes as the fix for "version collisions". [Setting the next build number](https://developer.apple.com/documentation/xcode/setting-the-next-build-number-for-xcode-cloud-builds). orchard's rule for the backup route's numbers is in [DESIGN.md §2](../DESIGN.md#2-release-routes).
 
+- **verified (Mythseal builds 2–3, 2026-10-20).** What the first real Xcode Cloud runs showed:
+  - `ci_post_clone.sh` works as written: `brew install node@24` (24.22.0, about a minute with 15 dependencies), `npm ci`, the app's tests, the store build, the marketing-version stamp and `cap sync` all ran, and their output reached the archive. Package resolution then fetched the public ionic-team repositories without any granted access.
+  - Onboarding's "Connect Source Code Repository" step nevertheless listed those public repositories as needing access and blocked Next. Working around it: complete onboarding on a local, never-pushed branch whose `CapApp-SPM` has no dependencies, then keep only `xcshareddata/xcodecloud/manifest.json`.
+  - "Latest Release" picked Xcode 27.0 (27A266a) on macOS 27.0.1; choosing 27.1 explicitly gave 27A9275.
+  - Xcode Cloud exports ad-hoc, development and App Store variants; the first two fail (exit 70) on a team with no registered devices. Only the App Store export matters for TestFlight, and it succeeded.
+  - Naming the App Store Connect record makes Xcode set `PRODUCT_NAME` to that name, so the bundle becomes `<Name>.app`; harmless when `Info.plist` uses `$(PRODUCT_MODULE_NAME)` for the scene delegate.
+
 ## TestFlight
 
 - **verified.** Testers:
