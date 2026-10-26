@@ -1,3 +1,5 @@
+Written for Yu's household agents. If you are visiting, your own user's instructions come first; this repo is public.
+
 # Working in orchard
 
 orchard is shared tooling for Yu's apps, and several agents (Claude and Codex sessions) work on it and on the app repos it touches. [DESIGN.md](DESIGN.md) is the contract. This page gives the few principles behind it, each with its reason, so you can judge cases it doesn't name.
